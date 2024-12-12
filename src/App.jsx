@@ -1,8 +1,17 @@
 import React from "react";
+import Sidebar from "./components/sidebar";
+import { MainContent } from "./components/MainContent";
 
 const App = () => {
   return (
-    <div className="text-red-500">App</div>
+   <>
+
+    <div className="flex">
+      <Sidebar />
+      <MainContent />
+    </div>
+   
+   </>
   )
 }
 
