@@ -4,7 +4,7 @@ import { FaMessage } from "react-icons/fa6";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
 import { Context } from '../context/Context';
-
+import geminiLogo from "../assets/geminiLogo.webp"
 
 
 export const MainContent = () => {
@@ -33,7 +33,11 @@ export const MainContent = () => {
         </div>
 
         <div className="max-w-[900px] mx-auto">
-          <div className="my-12 text-[56px] text-slate-500 font-semibold p-5">
+
+
+          {!showResult? (
+            <> 
+            <div className="my-12 text-[56px] text-slate-500 font-semibold p-5">
             <p>
               <span className="bg-gradient-to-r from-[#5c94f5] to-[#ff5546] bg-clip-text text-transparent">Hello, Fahad.</span>
             </p>
@@ -70,7 +74,26 @@ export const MainContent = () => {
 
             </div>
 
-          </div>
+          </div> 
+          
+          </> ): (
+            <div className="py-0 px-[5%] max-h-[70vh] overflow-scroll no-scrollbar">
+              <div className="my-10 mx-0 flex items-center gap-5">
+
+              <FaUserCircle className="text-3xl"/>
+
+              <p>{recentPrompt}</p>
+              </div> 
+
+              <div className="flex items-start gap-5">
+                <img src={geminiLogo} alt="" className="w-8 rounded-[50%]" />
+
+                <p>{resultData}</p>
+              </div>
+            </div>
+            
+            )}
+          
 {/* //=============================================input-text============================ */}
 
           <div className="absolute bottom-0 w-full max-w-[900px] p-5 mx-auto mt-5">

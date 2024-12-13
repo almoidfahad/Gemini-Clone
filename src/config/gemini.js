@@ -30,7 +30,7 @@ import {
     const response = result.response.text();
     console.log(result.response.text());
 
-
+    return response
     
   }
   

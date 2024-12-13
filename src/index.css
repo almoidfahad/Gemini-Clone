@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Hide scrollbar for WebKit browsers */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Firefox */
+  .no-scrollbar {
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* For Internet Explorer 10+ */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+  }
+  
