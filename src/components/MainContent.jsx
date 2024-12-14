@@ -122,10 +122,11 @@ export const MainContent = () => {
 
               <MdAddPhotoAlternate className="text-2xl cursor-pointer"/>
               <FaMicrophone className="text-2xl cursor-pointer"/>
-              <IoMdSend 
+              {input && (
+                <IoMdSend 
                 onClick={() => onSent()} 
                 className="text-2xl cursor-pointer"
-              />
+              />)}
 
 
 
