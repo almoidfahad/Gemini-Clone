@@ -82,13 +82,25 @@ export const MainContent = () => {
 
               <FaUserCircle className="text-3xl"/>
 
-              <p>{recentPrompt}</p>
+              <p className="text-lg font-[400] leading-[1.8]">{recentPrompt}</p>
               </div> 
 
               <div className="flex items-start gap-5">
                 <img src={geminiLogo} alt="" className="w-8 rounded-[50%]" />
 
-                <p>{resultData}</p>
+                  {loading ? (
+                    <div className="w-full flex flex-col gap-2">
+                      <hr className="rounded-md border-none bg-gray-200 bg-gradient-to-r from-[#65e3ff] via-[#ffffff] to-[#65e3ff] p-4 animate-scroll-bg"/>
+                      <hr className="rounded-md border-none bg-gray-200 bg-gradient-to-r from-[#65e3ff] via-[#ffffff] to-[#65e3ff] p-4 animate-scroll-bg"/>
+                      <hr className="rounded-md border-none bg-gray-200 bg-gradient-to-r from-[#65e3ff] via-[#ffffff] to-[#65e3ff] p-4 animate-scroll-bg"/>
+                  
+                  
+                    </div>
+                  ): <p 
+                  dangerouslySetInnerHTML={{__html: resultData}}
+                  className="text-lg font-[400] leading-[1.8]"></p>}
+
+                
               </div>
             </div>
             
@@ -111,7 +123,7 @@ export const MainContent = () => {
               <MdAddPhotoAlternate className="text-2xl cursor-pointer"/>
               <FaMicrophone className="text-2xl cursor-pointer"/>
               <IoMdSend 
-                onClick={() => onSent(input)} 
+                onClick={() => onSent()} 
                 className="text-2xl cursor-pointer"
               />
 
@@ -121,7 +133,8 @@ export const MainContent = () => {
 
             </div>
 
-            <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
+            <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600">Gemini may display inaccurate info, including about people, so double-check its responses. <samp className="text-cyan-700" >@Copyright by "Al Moid Fahad"</samp></p>
+            <p className="text-sm my-4 mx-auto text-center font-[600] text-slate-500"></p>
           </div>
         </div>
     </div>
